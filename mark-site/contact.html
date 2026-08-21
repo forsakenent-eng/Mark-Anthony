@@ -160,6 +160,13 @@
     const body = encodeURIComponent(bodyLines.join('\n'));
     window.location.href = 'mailto:hello@markanthonymartinez.com?subject=' + subject + '&body=' + body;
   });
+
+  const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
 </body>
 </html>

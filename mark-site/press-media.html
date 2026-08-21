@@ -97,6 +97,13 @@
     const open = document.body.classList.toggle('nav-open');
     toggle.setAttribute('aria-expanded', open);
   });
+
+  const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
 </body>
 </html>

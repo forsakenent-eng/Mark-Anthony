@@ -30,8 +30,12 @@
 
 <main>
 
-  <section class="page-hero about-hero">
-    <div class="wrap"><h1>About Mark Anthony Martinez</h1></div>
+  <section class="hero subpage-hero">
+    <div class="hero-bg" style="background-image:url('assets/images/mark-anthony-header.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-inner">
+      <h1>About Mark Anthony Martinez</h1>
+    </div>
   </section>
 
   <section class="about-lead">
@@ -118,6 +122,13 @@
     const open = document.body.classList.toggle('nav-open');
     toggle.setAttribute('aria-expanded', open);
   });
+
+  const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
 </body>
 </html>
