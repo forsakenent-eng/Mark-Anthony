@@ -30,16 +30,17 @@
 
 <main>
 
-  <section class="page-hero consulting-hero">
-    <div class="wrap">
-      <p class="eyebrow">Consulting Engagements</p>
+  <section class="hero subpage-hero">
+    <div class="hero-bg" style="background-image:url('assets/images/mark-anthony-header.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-inner">
       <h1>Request a Consultation</h1>
-      <p class="hero-tagline" style="margin-left:0;">Mark is passionate about sharing his experience and advice with organizations that are&hellip;</p>
     </div>
   </section>
 
-  <section class="intro" style="padding-top:0;">
+  <section class="intro">
     <div class="wrap">
+      <h2 style="max-width:820px; margin-left:auto; margin-right:auto;">Mark is Passionate About Sharing His Experience and Advice With Organizations That Are&hellip;</h2>
       <div class="feature-grid audience-grid">
         <div class="feature-card">
           <span class="feature-icon"><svg viewBox="0 0 512 512"><path d="M176 80c-52.94 0-96 43.06-96 96 0 12.25 2.353 23.93 6.616 34.72 3.256 8.259 1.44 17.63-4.862 23.9l-4.7 4.699C69.28 247.1 64 259.8 64 273.1V286.1C64 291.6 68.35 296 73.85 296H278.2C283.7 296 288 291.6 288 286.1V273.1C288 259.8 282.7 247.1 273 237.3L268.2 232.6C261.1 226.3 260.1 216.1 264.3 208.7C268.6 197.9 272 186.2 272 176C272 43.06 228.9 0 176 0M96 176C96 61.75 8.25 176 176 176M336 224C336 262.6 305.6 293.5 267 293.5H245V336H267C305.6 336 336 366.9 336 405.5C336 444.1 305.6 475 267 475H139C100.4 475 69.99 444.1 69.99 405.5C69.99 366.9 100.4 336 139 336H160V293.5H139C100.4 293.5 69.99 262.6 69.99 224C69.99 185.4 100.4 154.5 139 154.5H267C305.6 154.5 336 185.4 336 224Z"/></svg></span>
@@ -197,6 +198,13 @@
     const body = encodeURIComponent(bodyLines.join('\n'));
     window.location.href = 'mailto:hello@markanthonymartinez.com?subject=' + subject + '&body=' + body;
   });
+
+  const header = document.querySelector('.site-header');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
 </body>
 </html>
