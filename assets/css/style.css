@@ -56,10 +56,13 @@ h3{ font-size:24px; line-height:1.2; letter-spacing:-0.027em; }
 
 /* Header */
 .site-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:fixed; top:0; left:0; right:0; width:100%; z-index:50;
+  background:transparent;
+}
+.site-header .logo,
+.site-header .main-nav a,
+.site-header .nav-toggle span{
+  text-shadow:0 1px 3px rgba(0,0,0,0.5);
 }
 .header-inner{
   display:flex; align-items:center; justify-content:space-between;
@@ -91,7 +94,7 @@ h3{ font-size:24px; line-height:1.2; letter-spacing:-0.027em; }
 }
 .hero-overlay{
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.8) 100%);
+  background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 100%);
 }
 .hero-inner{
   position:relative; z-index:1;
