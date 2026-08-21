@@ -58,11 +58,13 @@ h3{ font-size:24px; line-height:1.2; letter-spacing:-0.027em; }
 .site-header{
   position:fixed; top:0; left:0; right:0; width:100%; z-index:50;
   background:transparent;
+  transition:background .2s ease;
 }
 .site-header .logo,
 .site-header .main-nav a,
 .site-header .nav-toggle span{
   text-shadow:0 1px 3px rgba(0,0,0,0.5);
+  transition:color .2s ease;
 }
 .header-inner{
   display:flex; align-items:center; justify-content:space-between;
@@ -73,9 +75,29 @@ h3{ font-size:24px; line-height:1.2; letter-spacing:-0.027em; }
 .main-nav ul{ display:flex; gap:32px; }
 .main-nav a{ font-weight:700; font-size:16px; color:#fff; }
 .main-nav a:hover{ color:rgba(255,255,255,0.7); }
-.header-cta{ padding:10px 22px; font-size:14px; white-space:nowrap; }
+.header-cta{
+  padding:10px 22px; font-size:14px; white-space:nowrap;
+  background:#fff; color:#000; border:2px solid #fff;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
 .nav-toggle{ display:none; background:none; border:0; cursor:pointer; padding:8px; }
 .nav-toggle span{ display:block; width:24px; height:2px; background:#fff; margin:5px 0; }
+
+/* Sticky header once scrolled past the hero */
+.site-header.scrolled{
+  background:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,0.08);
+}
+.site-header.scrolled .logo,
+.site-header.scrolled .main-nav a,
+.site-header.scrolled .nav-toggle span{
+  color:#111; text-shadow:none;
+}
+.site-header.scrolled .nav-toggle span{ background:#111; }
+.site-header.scrolled .main-nav a:hover{ color:rgba(0,0,0,0.6); }
+.site-header.scrolled .header-cta{
+  background:#000; color:#fff; border-color:#000;
+}
 
 @media (max-width:900px){
   .main-nav{ display:none; width:100%; order:3; }
